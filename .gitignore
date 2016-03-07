@@ -1,0 +1,16 @@
+/app/cache/*
+/app/config/parameters.yml
+!app/cache/.gitkeep
+/app/logs/*
+!app/logs/.gitkeep
+/app/phpunit.xml
+/bin/
+/web/uploads/
+.idea
+web/public/video
+composer.phar
+vendor
+app/data/data.db3
+.DS_STORE
+.phpintel/
+
