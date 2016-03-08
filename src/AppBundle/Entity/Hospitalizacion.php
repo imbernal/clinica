@@ -1,0 +1,184 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Hospitalizacion
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Hospitalizacion
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="valor_habitacion", type="string", length=255)
+     */
+    private $valorHabitacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_dias", type="string", length=255)
+     */
+    private $numeroDias;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="valor_restaurante", type="string", length=255)
+     */
+    private $valorRestaurante;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="valor_varios", type="string", length=255)
+     */
+    private $valorVarios;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="num_visitas", type="string", length=255)
+     */
+    private $numVisitas;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set valorHabitacion
+     *
+     * @param string $valorHabitacion
+     * @return Hospitalizacion
+     */
+    public function setValorHabitacion($valorHabitacion)
+    {
+        $this->valorHabitacion = $valorHabitacion;
+
+        return $this;
+    }
+
+    /**
+     * Get valorHabitacion
+     *
+     * @return string 
+     */
+    public function getValorHabitacion()
+    {
+        return $this->valorHabitacion;
+    }
+
+    /**
+     * Set numeroDias
+     *
+     * @param string $numeroDias
+     * @return Hospitalizacion
+     */
+    public function setNumeroDias($numeroDias)
+    {
+        $this->numeroDias = $numeroDias;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroDias
+     *
+     * @return string 
+     */
+    public function getNumeroDias()
+    {
+        return $this->numeroDias;
+    }
+
+    /**
+     * Set valorRestaurante
+     *
+     * @param string $valorRestaurante
+     * @return Hospitalizacion
+     */
+    public function setValorRestaurante($valorRestaurante)
+    {
+        $this->valorRestaurante = $valorRestaurante;
+
+        return $this;
+    }
+
+    /**
+     * Get valorRestaurante
+     *
+     * @return string 
+     */
+    public function getValorRestaurante()
+    {
+        return $this->valorRestaurante;
+    }
+
+    /**
+     * Set valorVarios
+     *
+     * @param string $valorVarios
+     * @return Hospitalizacion
+     */
+    public function setValorVarios($valorVarios)
+    {
+        $this->valorVarios = $valorVarios;
+
+        return $this;
+    }
+
+    /**
+     * Get valorVarios
+     *
+     * @return string 
+     */
+    public function getValorVarios()
+    {
+        return $this->valorVarios;
+    }
+
+    /**
+     * Set numVisitas
+     *
+     * @param string $numVisitas
+     * @return Hospitalizacion
+     */
+    public function setNumVisitas($numVisitas)
+    {
+        $this->numVisitas = $numVisitas;
+
+        return $this;
+    }
+
+    /**
+     * Get numVisitas
+     *
+     * @return string 
+     */
+    public function getNumVisitas()
+    {
+        return $this->numVisitas;
+    }
+}
