@@ -13,4 +13,4 @@ vendor
 app/data/data.db3
 .DS_STORE
 .phpintel/
-
+composer.lock
