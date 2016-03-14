@@ -1,15 +1,15 @@
 <?php
 
-namespace UserBundle\Entity;
+namespace ApiBundle\Entity;
 
-use FOS\UserBundle\Entity\User as BaseUser;
+use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ORM\Table("oauth2_clients")
  * @ORM\Entity
- * @ORM\Table(name="fos_user")
  */
-class User extends BaseUser
+class Client extends BaseClient
 {
     /**
      * @ORM\Id
@@ -21,6 +21,5 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
     }
 }

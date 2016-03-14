@@ -4,6 +4,7 @@
 /app/logs/*
 !app/logs/.gitkeep
 /app/phpunit.xml
+app/data.db3
 /bin/
 /web/uploads/
 .idea

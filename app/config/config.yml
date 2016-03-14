@@ -73,7 +73,7 @@ doctrine:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: UserBundle\Entity\User
+    user_class: ApiBundle\Entity\User
 
 sonata_block:
         default_contexts: [cms]
@@ -89,3 +89,27 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+nelmio_api_doc:  ~
+
+sensio_framework_extra:
+    view:
+        annotations:  false
+
+fos_rest:
+    param_fetcher_listener:  true
+    body_listener: true
+    format_listener: true
+    view:
+        view_response_listener: 'force'
+    routing_loader:
+        default_format: json
+        include_format: false
+
+lexik_jwt_authentication:
+    private_key_path:   %kernel.root_dir%/var/jwt/private-test.pem
+    public_key_path:    %kernel.root_dir%/var/jwt/public-test.pem
+    pass_phrase:        'cesar'
+    token_ttl:          86400
+    encoder_service:     lexik_jwt_authentication.jwt_encoder
+    user_identity_field: username

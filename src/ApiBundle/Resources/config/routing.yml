@@ -1,0 +1,7 @@
+area:
+    type: rest
+    resource: ApiBundle\Controller\AreaController
+user:
+    type: rest
+    parent: area
+    resource: ApiBundle\Controller\UserController

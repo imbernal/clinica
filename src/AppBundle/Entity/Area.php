@@ -3,7 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\Collection;
+use ApiBundle\Entity\User;
 /**
  * Area
  *
@@ -28,6 +29,12 @@ class Area
      */
     private $nombre;
 
+    /**
+     * @ORM\OneToMany(targetEntity="ApiBundle\Entity\User", mappedBy="area")
+     *
+     * @var Collection $users
+     */
+    private $users;
 
     /**
      * Get id
@@ -61,4 +68,21 @@ class Area
     {
         return $this->nombre;
     }
+
+    /**
+     * @return Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * @param Collection $users
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
+    }
+
 }
