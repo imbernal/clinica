@@ -1,0 +1,33 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Planta
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"doctor" = "Doctor", "enfermera" = "Enfermera" , "auxiliares"="Auxiliares"})
+ */
+class Planta extends Personal
+{
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Enfermera", inversedBy="plantas")
+     * @ORM\JoinColumn(name="enfermera_id", referencedColumnName="id")
+     */
+    protected $enfermerar;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="piso_cargo", type="string", length=255)
+     */
+    private $pisoCargo;
+    
+}
+
