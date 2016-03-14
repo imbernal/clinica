@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorMap({"administrativo" = "Administrativo", "planta" = "PLanta",
  *                    "operativo" = "Operativo"})
  */
-abstract class Personal
+class Personal
 {
     /**
      * @var integer

@@ -1,0 +1,15 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * OficiosVarios
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class OficiosVarios extends Operativo
+{
+}

@@ -127,28 +127,4 @@ class FichaVisita
     {
         return $this->estado;
     }
-
-    /**
-     * Set paciente
-     *
-     * @param \AppBundle\Entity\Paciente $paciente
-     *
-     * @return FichaVisita
-     */
-    public function setPaciente(\AppBundle\Entity\Paciente $paciente = null)
-    {
-        $this->paciente = $paciente;
-
-        return $this;
-    }
-
-    /**
-     * Get paciente
-     *
-     * @return \AppBundle\Entity\Paciente
-     */
-    public function getPaciente()
-    {
-        return $this->paciente;
-    }
 }
