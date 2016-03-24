@@ -25,9 +25,7 @@ class AreaController extends FOSRestController
 
         $entities = $em->getRepository('AppBundle:Area')->findAll();
 
-        return array(
-            'entities' => $entities,
-        );
+        return $entities;
     }
 
     /**
