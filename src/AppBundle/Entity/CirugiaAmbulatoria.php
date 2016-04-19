@@ -11,6 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CirugiaAmbulatoria extends Servicio
 {
-   
+   public function __toString() {
+		return $this->getTipo();
+	}
 }
 

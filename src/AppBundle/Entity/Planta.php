@@ -17,12 +17,6 @@ abstract class Planta extends Personal
 {
 
     /**
-     * @ORM\ManyToOne(targetEntity="Enfermera", inversedBy="plantas")
-     * @ORM\JoinColumn(name="enfermera_id", referencedColumnName="id")
-     */
-    protected $enfermerar;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="piso_cargo", type="string", length=255)
@@ -52,29 +46,5 @@ abstract class Planta extends Personal
     public function getPisoCargo()
     {
         return $this->pisoCargo;
-    }
-
-    /**
-     * Set enfermerar
-     *
-     * @param \AppBundle\Entity\Enfermera $enfermerar
-     *
-     * @return Planta
-     */
-    public function setEnfermerar(\AppBundle\Entity\Enfermera $enfermerar = null)
-    {
-        $this->enfermerar = $enfermerar;
-
-        return $this;
-    }
-
-    /**
-     * Get enfermerar
-     *
-     * @return \AppBundle\Entity\Enfermera
-     */
-    public function getEnfermerar()
-    {
-        return $this->enfermerar;
     }
 }

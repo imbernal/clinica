@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-abstract class Doctor extends Personal
+class Doctor extends Personal
 {
 
     /**
@@ -20,25 +20,14 @@ abstract class Doctor extends Personal
      */
     private $ci;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nombre", type="string", length=255)
-     */
-    private $nombre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="area", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Area")
      */
     private $area;
 
-
-    /**
-     * @ORM\OneToMany(targetEntity="Examen", mappedBy="servicio")
-     */
-    protected $examenes;
 
     /**
      * Set area
@@ -56,7 +45,7 @@ abstract class Doctor extends Personal
     /**
      * Get area
      *
-     * @return string 
+     * @return Area 
      */
     public function getArea()
     {
@@ -67,7 +56,7 @@ abstract class Doctor extends Personal
      */
     public function __construct()
     {
-        $this->examenes = new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
     /**
@@ -94,61 +83,7 @@ abstract class Doctor extends Personal
         return $this->ci;
     }
 
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     *
-     * @return Doctor
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Add examene
-     *
-     * @param \AppBundle\Entity\Examen $examene
-     *
-     * @return Doctor
-     */
-    public function addExamene(\AppBundle\Entity\Examen $examene)
-    {
-        $this->examenes[] = $examene;
-
-        return $this;
-    }
-
-    /**
-     * Remove examene
-     *
-     * @param \AppBundle\Entity\Examen $examene
-     */
-    public function removeExamene(\AppBundle\Entity\Examen $examene)
-    {
-        $this->examenes->removeElement($examene);
-    }
-
-    /**
-     * Get examenes
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getExamenes()
-    {
-        return $this->examenes;
+    public function __toString() {
+        return $this->getNombre();
     }
 }

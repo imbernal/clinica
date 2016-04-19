@@ -43,8 +43,7 @@ class Poseedor
     private $direccion;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Consultorio", inversedBy="poseedores")
-     * @ORM\JoinColumn(name="consultorio_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Consultorio")
      */
     protected $consultorio;
 

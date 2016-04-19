@@ -19,32 +19,9 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Area", inversedBy="users")
-     *
-     * @var Area $area
-     */
-    private $area;
-
     public function __construct()
     {
         parent::__construct();
         // your own logic
-    }
-
-    /**
-     * @return Area
-     */
-    public function getArea()
-    {
-        return $this->area;
-    }
-
-    /**
-     * @param Area $area
-     */
-    public function setArea($area)
-    {
-        $this->area = $area;
     }
 }

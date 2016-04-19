@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-abstract class Enfermera extends Planta
+class Enfermera extends Planta
 {
     /**
      * @var string
@@ -28,14 +28,8 @@ abstract class Enfermera extends Planta
     private $profesional;
 
 
-    /**
-     * @ORM\OneToMany(targetEntity="Planta", mappedBy="enfermera")
-     */
-    protected $plantas;
-
     public function __construct()
     {
-        $this->plantas = new ArrayCollection();
     }
 
     /**
@@ -82,39 +76,5 @@ abstract class Enfermera extends Planta
     public function getProfesional()
     {
         return $this->profesional;
-    }
-
-    /**
-     * Add planta
-     *
-     * @param \AppBundle\Entity\Planta $planta
-     *
-     * @return Enfermera
-     */
-    public function addPlanta(\AppBundle\Entity\Planta $planta)
-    {
-        $this->plantas[] = $planta;
-
-        return $this;
-    }
-
-    /**
-     * Remove planta
-     *
-     * @param \AppBundle\Entity\Planta $planta
-     */
-    public function removePlanta(\AppBundle\Entity\Planta $planta)
-    {
-        $this->plantas->removeElement($planta);
-    }
-
-    /**
-     * Get plantas
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPlantas()
-    {
-        return $this->plantas;
     }
 }

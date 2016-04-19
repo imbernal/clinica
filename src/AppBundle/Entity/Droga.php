@@ -43,8 +43,7 @@ class Droga
     private $dosisSuministrada;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Servicio", inversedBy="drogas")
-     * @ORM\JoinColumn(name="servicio_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Servicio")
      */
     protected $servicio;
 

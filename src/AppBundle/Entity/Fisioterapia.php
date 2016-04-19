@@ -11,6 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Fisioterapia extends Servicio
 {
- 
+	public function __toString() {
+		return $this->getTipo();
+	}
 }
 

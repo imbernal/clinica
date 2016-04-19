@@ -120,15 +120,10 @@ class Consultorio
      */
     private $ultimaFecha;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Poseedor", mappedBy="consultorio")
-     */
-    protected $poseedores;
 
 
     public function __construct()
     {
-        $this->poseedores = new ArrayCollection();
     }
 
     /**
@@ -462,39 +457,5 @@ class Consultorio
     public function getUltimaFecha()
     {
         return $this->ultimaFecha;
-    }
-
-    /**
-     * Add poseedore
-     *
-     * @param \AppBundle\Entity\Poseedor $poseedore
-     *
-     * @return Consultorio
-     */
-    public function addPoseedore(\AppBundle\Entity\Poseedor $poseedore)
-    {
-        $this->poseedores[] = $poseedore;
-
-        return $this;
-    }
-
-    /**
-     * Remove poseedore
-     *
-     * @param \AppBundle\Entity\Poseedor $poseedore
-     */
-    public function removePoseedore(\AppBundle\Entity\Poseedor $poseedore)
-    {
-        $this->poseedores->removeElement($poseedore);
-    }
-
-    /**
-     * Get poseedores
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPoseedores()
-    {
-        return $this->poseedores;
     }
 }

@@ -50,14 +50,12 @@ class Examen
     private $resultado;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Servicio", inversedBy="examenes")
-     * @ORM\JoinColumn(name="servicio_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Servicio")
      */
     protected $servicio;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Doctor", inversedBy="examenes")
-     * @ORM\JoinColumn(name="doctor_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Doctor")
      */
     protected $doctor;
 

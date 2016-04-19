@@ -51,21 +51,13 @@ class Paciente
     private $telefono;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Servicio", inversedBy="pacientes")
-     * @ORM\JoinColumn(name="servicio_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Servicio")
      */
     protected $servicio;
-
-    /**
-     * @ORM\OneToMany(targetEntity="FichaVisita", mappedBy="paciente")
-     */
-    protected $fichas;
-
 
 
     public function __construct()
     {
-        $this->fichas = new ArrayCollection();
     }
 
     /**
@@ -192,39 +184,5 @@ class Paciente
     public function getServicio()
     {
         return $this->servicio;
-    }
-
-    /**
-     * Add ficha
-     *
-     * @param \AppBundle\Entity\FichaVisita $ficha
-     *
-     * @return Paciente
-     */
-    public function addFicha(\AppBundle\Entity\FichaVisita $ficha)
-    {
-        $this->fichas[] = $ficha;
-
-        return $this;
-    }
-
-    /**
-     * Remove ficha
-     *
-     * @param \AppBundle\Entity\FichaVisita $ficha
-     */
-    public function removeFicha(\AppBundle\Entity\FichaVisita $ficha)
-    {
-        $this->fichas->removeElement($ficha);
-    }
-
-    /**
-     * Get fichas
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getFichas()
-    {
-        return $this->fichas;
     }
 }

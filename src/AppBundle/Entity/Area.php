@@ -30,13 +30,6 @@ class Area
     private $nombre;
 
     /**
-     * @ORM\OneToMany(targetEntity="ApiBundle\Entity\User", mappedBy="area")
-     *
-     * @var Collection $users
-     */
-    private $users;
-
-    /**
      * Get id
      *
      * @return integer 
@@ -68,21 +61,4 @@ class Area
     {
         return $this->nombre;
     }
-
-    /**
-     * @return Collection
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * @param Collection $users
-     */
-    public function setUsers($users)
-    {
-        $this->users = $users;
-    }
-
 }

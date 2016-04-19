@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CuidadosIntensivos extends Servicio
 {
-    
+    public function __toString() {
+		return $this->getTipo();
+	}
 }
 

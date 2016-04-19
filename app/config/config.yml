@@ -134,5 +134,32 @@ nelmio_cors:
 
 easy_admin:
     entities:
+        - AppBundle\Entity\Administrativo
+        - AppBundle\Entity\Enfermera
         - AppBundle\Entity\Area
         - ApiBundle\Entity\User
+        - AppBundle\Entity\Aseador
+        - AppBundle\Entity\Auxiliares
+        - AppBundle\Entity\Cardiovascular
+        - AppBundle\Entity\Cirugia
+        - AppBundle\Entity\CirugiaAmbulatoria
+        - AppBundle\Entity\Cocinero
+        - AppBundle\Entity\Consulta
+        - AppBundle\Entity\Consultorio
+        - AppBundle\Entity\Contabilidad
+        - AppBundle\Entity\CuidadosIntensivos
+        - AppBundle\Entity\Doctor
+        - AppBundle\Entity\Droga
+        - AppBundle\Entity\Examen
+        - AppBundle\Entity\FichaVisita
+        - AppBundle\Entity\Finanzas
+        - AppBundle\Entity\Fisioterapia
+        - AppBundle\Entity\Hospitalizacion
+        - AppBundle\Entity\OficiosVarios
+        - AppBundle\Entity\Operativo
+        - AppBundle\Entity\Paciente
+        - AppBundle\Entity\Planta
+        - AppBundle\Entity\Poseedor
+        - AppBundle\Entity\Servicio
+        - AppBundle\Entity\Urgencia
+

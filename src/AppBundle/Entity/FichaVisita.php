@@ -43,8 +43,7 @@ class FichaVisita
     private $estado;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Paciente", inversedBy="fichas")
-     * @ORM\JoinColumn(name="paciente_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Paciente")
      */
     protected $paciente;
 
